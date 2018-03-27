@@ -19,9 +19,57 @@
 ****************************************************************/
 function pairs(names) {
   // Your code goes here
+  if (names){
+  	if (names.length==0){
+  		return [];
+  	}
+  	else if(names.length==2){
+  		let arr = [];
+  		arr.push(names);
+  		return arr;
+  	}
+  	else if(names.length>2){
+  		 if(names.length % 2 == 0){
+	  		//names = names.getRandom();
+	  		let arr = [];
+	  		for (let i = 0; i < names.length; i=i+2) {
+	  			let array = [names[i],names[i+1]];
+	  			arr.push(array);
+	  		} 
+	  		return arr;
+  		 }
+  		 else if (names.length % 2 == 1){
+
+  		 	let remainder = names[names.length-1];
+  		 	remainder = [remainder];
+			let arr = [];
+	  		for (let i = 0; i < names.length; i=i+2) {
+	  			let array = [names[i],names[i+1]];
+	  			arr.push(array);
+	  		} 
+	  		arr.push(remainder);
+	  		return arr;
+
+  		 }
+
+
+  	}
+
+ 
+
+  }
+  else{
+
+  	return [];
+
+
+  }
+
 }
 
-export default pairs;
+export default pairs
+
+
 
 /**********************************************
 * READ ME!!!!
